@@ -1,3 +1,7 @@
+//P5.js Playground
+//https://p5js.org/reference/
+//https://editor.p5js.org/
+
 function setup() {
   createCanvas(400, 400);
 }
