@@ -2,22 +2,28 @@
 //https://p5js.org/reference/
 //https://editor.p5js.org/
 
+let v = false;
+
+function mouseClicked() {
+  v = !v;
+}
+
+let central = 300;
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(central *2, central *2);
 }
 
 function draw() {
-  let v = true;
-  background(220);
-  circle(200,200,5);
+  clear();
+  circle(central,central,5);
   circle(mouseX,mouseY,5);
-  circle((mouseX + 200)/2,mouseY,5);
-  circle((mouseX + 200)/2,200,5);
-  circle(mouseX,(mouseY + 200)/2,5);
-  circle(200,(mouseY + 200)/2,5);
+  circle((mouseX + central)/2,mouseY,5);
+  circle((mouseX + central)/2,central,5);
+  circle(mouseX,(mouseY + central)/2,5);
+  circle(central,(mouseY + central)/2,5);
   if(v){
-    bezier(200,200,200,(mouseY + 200)/2,mouseX,(mouseY + 200)/2,mouseX,mouseY)
+    bezier(central,central,central,(mouseY + central)/2,mouseX,(mouseY + central)/2,mouseX,mouseY)
   }else{
-    bezier(200,200,(mouseX + 200)/2,200,(mouseX + 200)/2,mouseY,mouseX,mouseY)
+    bezier(central,central,(mouseX + central)/2,central,(mouseX + central)/2,mouseY,mouseX,mouseY)
   }
 }
